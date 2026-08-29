@@ -1,1 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Sai Ganesh K | AI/ML Developer</title>
+
+    <meta name="description"
+          content="Sai Ganesh K - AI/ML Developer and Software Developer Portfolio">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #63e6be;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d7dee8;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #63e6be;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 70px;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(99,230,190,0.12), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(56,189,248,0.10), transparent 30%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid rgba(99,230,190,0.4);
+            border-radius: 30px;
+            color: #63e6be;
+            font-size: 14px;
+            margin-bottom: 22px;
+            background: rgba(99,230,190,0.05);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 82px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #63e6be;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 4vw, 32px);
+            color: #b9c4d0;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #8f9bab;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #63e6be;
+            color: #07111f;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99,230,190,0.25);
+        }
+
+        .btn-outline {
+            border: 1px solid #344255;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: #63e6be;
+            color: #63e6be;
+            transform: translateY(-3px);
+        }
+
+        /* COMMON */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #63e6be;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-card {
+            padding: 35px;
+            border: 1px solid #263448;
+            border-radius: 18px;
+            background: #0c1828;
+            text-align: center;
+        }
+
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            margin: auto auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #63e6be, #38bdf8);
+            color: #07111f;
+        }
+
+        .profile-card h3 {
+            font-size: 22px;
+        }
+
+        .profile-card p {
+            color: #8f9bab;
+            margin-top: 5px;
+        }
+
+        .about-text p {
+            color: #aeb8c5;
+            margin-bottom: 18px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 27px;
+            color: #63e6be;
+        }
+
+        .stat span {
+            color: #7f8b9a;
+            font-size: 13px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            border: 1px solid #263448;
+            border-radius: 14px;
+            background: #0c1828;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #63e6be;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            color: #63e6be;
+        }
+
+        .skill-card p {
+            color: #9da9b7;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            position: relative;
+            padding: 28px;
+            border: 1px solid #263448;
+            border-radius: 16px;
+            background: #0c1828;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #63e6be;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .project-number {
+            color: #63e6be;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .project-card .subtitle {
+            color: #63e6be;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #9da9b7;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            background: #152437;
+            border-radius: 5px;
+            color: #aebbc9;
+            font-size: 11px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .cert-card {
+            padding: 22px;
+            background: #0c1828;
+            border: 1px solid #263448;
+            border-radius: 12px;
+            color: #c8d1dc;
+        }
+
+        .cert-card::before {
+            content: "✓";
+            color: #63e6be;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            padding: 35px;
+            background: #0c1828;
+            border: 1px solid #263448;
+            border-radius: 16px;
+        }
+
+        .education-card h3 {
+            color: #63e6be;
+            font-size: 22px;
+        }
+
+        .education-card p {
+            color: #9da9b7;
+            margin-top: 8px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 50px 25px;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                rgba(99,230,190,0.08),
+                rgba(56,189,248,0.05)
+            );
+            border: 1px solid #263448;
+        }
+
+        .contact-box h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #9da9b7;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            color: #c8d1dc;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #1d2a3b;
+            padding: 30px 20px;
+            text-align: center;
+            color: #6f7c8c;
+            font-size: 13px;
+        }
+
+        /* ANIMATION */
+
+        .fade-up {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">SGK.</a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content fade-up">
+
+        <div class="hero-badge">
+            Available for Opportunities
+        </div>
+
+        <h1>
+            Sai Ganesh <span>K</span>
+        </h1>
+
+        <h2>
+            AI/ML Developer • Software Developer
+        </h2>
+
+        <p>
+            B.Tech Artificial Intelligence & Data Science student
+            building practical AI-powered solutions for real-world problems.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>About Me</span>
+            <h2>Building With AI</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="profile-card">
+
+                <div class="profile-icon">
+                    SG
+                </div>
+
+                <h3>Sai Ganesh K</h3>
+
+                <p>AI/ML Developer</p>
+
+                <p>Software Developer</p>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <p>
+                    I'm a second-year B.Tech student specializing in
+                    Artificial Intelligence & Data Science, passionate about
+                    developing intelligent applications and solving
+                    real-world problems using technology.
+                </p>
+
+                <p>
+                    My interests include Machine Learning, Neural Networks,
+                    AI-powered applications, cloud computing and software
+                    development.
+                </p>
+
+                <p>
+                    I enjoy turning ideas into working prototypes and
+                    continuously improving my technical skills through
+                    projects and hands-on learning.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>3+</strong>
+                        <span>Major Projects</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>AI</strong>
+                        <span>Core Interest</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>8.00</strong>
+                        <span>CGPA</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>My Expertise</span>
+            <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>
+                    Python • C • C++ • Java
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AI / ML</h3>
+                <p>
+                    TensorFlow • Keras • Neural Networks •
+                    Model Training • Model Evaluation
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data</h3>
+                <p>
+                    Data Analysis • Feature Extraction •
+                    Machine Learning Fundamentals
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cloud</h3>
+                <p>
+                    AWS Cloud Fundamentals •
+                    AWS Cloud Practitioner Essentials
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Development</h3>
+                <p>
+                    Web Development • App Development •
+                    REST-style Integrations
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Tools</h3>
+                <p>
+                    GitHub • Google AI Studio •
+                    Jupyter Notebook
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>What I've Built</span>
+            <h2>Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>AI Farm Advisor</h3>
+
+                <div class="subtitle">
+                    AI-Powered Agriculture Support Platform
+                </div>
+
+                <p>
+                    A technology platform designed to connect farmers
+                    with agriculture specialists, field workers, tractor
+                    operators and crop buyers.
+                </p>
+
+                <p>
+                    The concept includes AI-based crop assistance,
+                    work status updates, direct crop selling support
+                    and accessible farmer services.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">ML</span>
+                    <span class="tag">Agriculture</span>
+                    <span class="tag">App Development</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>See2Learn</h3>
+
+                <div class="subtitle">
+                    Real-World Object to AR Concept Visualization
+                </div>
+
+                <p>
+                    An educational technology concept that uses
+                    AI-based object recognition to identify real-world
+                    objects.
+                </p>
+
+                <p>
+                    Recognized objects can be connected with interactive
+                    Augmented Reality learning experiences to make
+                    abstract concepts easier to understand.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">AR</span>
+                    <span class="tag">Education</span>
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>EcoSkin</h3>
+
+                <div class="subtitle">
+                    Self-Healing Smart Road
+                </div>
+
+                <p>
+                    A sustainable smart-infrastructure concept using
+                    self-healing materials to reduce road maintenance
+                    requirements and improve road lifespan.
+                </p>
+
+                <p>
+                    Embedded sensors and AI-based predictive analysis
+                    can help monitor road conditions and identify
+                    potential maintenance needs.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Sustainability</span>
+                    <span class="tag">Smart Infrastructure</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Learning</span>
+            <h2>Certifications & Learning</h2>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                AWS Cloud Practitioner Essentials
+            </div>
+
+            <div class="cert-card">
+                Generative AI Developer Learning
+            </div>
+
+            <div class="cert-card">
+                Machine Learning & Neural Networks using TensorFlow/Keras
+            </div>
+
+            <div class="cert-card">
+                AI and Data Analysis Fundamentals
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Education</span>
+            <h2>Academic Journey</h2>
+        </div>
+
+        <div class="education-card">
+
+            <h3>
+                B.Tech — Artificial Intelligence & Data Science
+            </h3>
+
+            <p>
+                Sri Sairam Engineering College
+            </p>
+
+            <p>
+                2nd Year • CGPA: 8.00
+            </p>
+
+            <p>
+                Focus Areas: Artificial Intelligence,
+                Machine Learning, Data Science and Software Development
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Let's Build Something Intelligent.</h2>
+
+            <p>
+                I'm interested in AI/ML, software development,
+                innovative projects and learning opportunities.
+            </p>
+
+            <div class="contact-info">
+
+                <span>
+                    📧 saiganeshk1206@gmail.com
+                </span>
+
+                <span>
+                    📱 +91 76392 00643
+                </span>
+
+                <span>
+                    📍 Tamil Nadu, India
+                </span>
+
+            </div>
+
+            <a
+                href="mailto:saiganeshk1206@gmail.com"
+                class="btn btn-primary"
+            >
+                Send Me an Email
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Sai Ganesh K. Built with HTML & CSS.
+    </p>
+
+    <p>
+        AI/ML Developer • Software Developer
+    </p>
+
+</footer>
+
+
+</body>
+</html>
